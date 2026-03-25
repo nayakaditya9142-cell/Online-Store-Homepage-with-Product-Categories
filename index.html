@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Online Store | Electronics & Men's Fashion</title>
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="#">MODERN<span>STORE</span></a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="shoe">
+                    <i data-lucide="search"></i>
+                </div>
+                <div class="cart-btn">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="shop">
+        <!-- Hero Section -->
+        <section class="hero-section container">
+            <div class="hero-content">
+                <h1>Elevate Your <span>Lifestyle</span></h1>
+                <p>Discover the finest collection of electronics and premium men's fashion curated for the modern minimalist.</p>
+                <div class="hero-btns">
+                    <a href="#shop-grid" class="btn btn-primary">Shop Now</a>
+                    <a href="#" class="btn btn-outline">Explore More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./assets/laptop.png" alt="Featured Product">
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="shop-container container">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <div class="category-tabs">
+                        <button class="cat-tab active" data-category="all">All Items</button>
+                        <button class="cat-tab" data-category="electronics">Electronics</button>
+                        <button class="cat-tab" data-category="fashion">Men's Fashion</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <div class="price-slider-container">
+                        <input type="range" id="priceRange" min="0" max="150000" step="500" value="150000">
+                        <div class="price-labels">
+                            <span>₹0</span>
+                            <span id="priceValue">₹1,50,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Sort By</h3>
+                    <select id="sortSelect" class="custom-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating-high">Rating: High to Low</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="products-main" id="shop-grid">
+                <div class="grid-header">
+                    <h2 id="currentCategoryTitle">All Products</h2>
+                    <span id="productCount">8 Products Found</span>
+                </div>
+                
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="#">MODERN<span>STORE</span></a>
+                <p>Curating the best in tech and style for your everyday essentials.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Latest arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Get exclusive deals and updates.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="email@example.com">
+                    <button>Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ModernStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Main Logic Script -->
+    <script type="module" src="main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
