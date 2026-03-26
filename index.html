@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Online Store | Electronics & Men's Fashion</title>
-    <!-- Google Fonts: Inter for a clean, modern look -->
+    <title>Wishllist karo.com: Online Shopping India - Buy Mobiles, Laptops, Accessories & more!</title>
+    <!-- Google Fonts: Amazon uses custom fonts, but Inter captures the clean look well -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,133 +14,501 @@
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="main-header">
-        <nav class="navbar container">
-            <div class="logo">
-                <a href="#">MODERN<span>STORE</span></a>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Header / Navbar Section -->
+    <header class="amazon-header">
+        <!-- Top Header: Logo, Search, Account -->
+        <div class="header-main" id="top">
+            <div class="container-fluid header-flex">
+                <!-- Logo & Location -->
+                <div class="header-left">
+                    <div class="nav-logo">
+                        <a href="index.html" class="amazon-logo">
+                            <span class="a-logo">Wishllist<span> karo.com</span></span>
+                        </a>
+                    </div>
+                    <div class="nav-location" id="location-picker">
+                        <i data-lucide="map-pin"></i>
+                        <div class="loc-text">
+                            <span class="loc-label">Delivering to Mumbai 400001</span>
+                            <span class="loc-name">Update location</span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="nav-actions">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="shoe">
-                    <i data-lucide="search"></i>
+                <!-- Search Bar -->
+                <div class="header-center">
+                    <form class="nav-search" id="search-form">
+                        <div class="search-category">
+                            <select id="search-cat-dropdown">
+                                <option value="all">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="home">Home & Kitchen</option>
+                                <option value="beauty">Beauty & Health</option>
+                                <option value="mobiles">Mobiles</option>
+                                <option value="books">Books</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Search Wishllist karo.com" autocomplete="off">
+                        <button type="submit" class="search-submit">
+                            <i data-lucide="search"></i>
+                        </button>
+                    </form>
                 </div>
-                <div class="cart-btn">
-                    <i data-lucide="shopping-cart"></i>
-                    <span class="cart-count">0</span>
+
+                <!-- Actions: Language, Account, Orders, Cart -->
+                <div class="header-right">
+                    <!-- Language Dropdown -->
+                    <div class="nav-extra lang-nav dropdown-trigger" id="lang-trigger">
+                        <span class="flag">🇮🇳</span>
+                        <span class="lang-code">EN</span>
+                        <i data-lucide="chevron-down"></i>
+                        <div class="header-dropdown lang-dropdown">
+                            <div class="dropdown-item active">English - EN</div>
+                            <div class="dropdown-item">हिंदी - HI</div>
+                            <div class="dropdown-item">தமிழ் - TA</div>
+                            <div class="dropdown-item">తెలుగు - TE</div>
+                            <div class="dropdown-item">ಕನ್ನಡ - KN</div>
+                            <div class="dropdown-item">മലയാളം - ML</div>
+                            <div class="dropdown-item">বাংলা - BN</div>
+                            <div class="dropdown-item">मराठी - MR</div>
+                        </div>
+                    </div>
+
+                    <!-- Account & Lists Dropdown -->
+                    <div class="nav-extra account-nav dropdown-trigger" id="account-trigger">
+                        <div class="account-labels">
+                            <span class="nav-line-1">Hello, sign in</span>
+                            <span class="nav-line-2">Account & Lists <i data-lucide="chevron-down"></i></span>
+                        </div>
+                        <div class="header-dropdown account-dropdown">
+                            <div class="sign-in-btn-container">
+                                <button class="btn-amazon-primary">Sign in</button>
+                                <p>New customer? <a href="#">Start here.</a></p>
+                            </div>
+                            <div class="dropdown-columns">
+                                <div class="col">
+                                    <h4>Your Lists</h4>
+                                    <a href="#">Create a Wish List</a>
+                                    <a href="#">Wish from Any Website</a>
+                                    <a href="#">Baby Wish List</a>
+                                    <a href="#">Discover Your Style</a>
+                                    <a href="#">Explore Showroom</a>
+                                </div>
+                                <div class="col">
+                                    <h4>Your Account</h4>
+                                    <a href="#">Your Account</a>
+                                    <a href="#">Your Orders</a>
+                                    <a href="#">Your Wish List</a>
+                                    <a href="#">Your Recommendations</a>
+                                    <a href="#">Your Prime Membership</a>
+                                    <a href="#">Your Prime Video</a>
+                                    <a href="#">Your Subscribe & Save Items</a>
+                                    <a href="#">Memberships & Subscriptions</a>
+                                    <a href="#">Your Amazon Business Account</a>
+                                    <a href="#">Your Seller Account</a>
+                                    <a href="#">Manage Your Content and Devices</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-extra orders-nav">
+                        <span class="nav-line-1">Returns</span>
+                        <span class="nav-line-2">& Orders</span>
+                    </div>
+                    <div class="nav-cart" id="cart-nav">
+                        <div class="cart-icon-container">
+                            <i data-lucide="shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </div>
+                        <span class="cart-label">Cart</span>
+                    </div>
                 </div>
-                <div class="mobile-menu-btn">
-                    <i data-lucide="menu"></i>
+            </div>
+        </div>
+
+        <!-- Sub-navigation: Category Links -->
+        <nav class="header-subnav">
+                <div class="subnav-left">
+                    <button class="menu-btn" id="side-menu-toggle">
+                        <i data-lucide="menu"></i>
+                        <span>All</span>
+                    </button>
+                    <a href="#" class="subnav-brand" data-category="all">Wishllist karo.com</a>
+                    <ul class="subnav-links">
+                        <li><a href="#" data-category="fresh">Fresh</a></li>
+                        <li><a href="#" data-category="mobiles">Mobiles</a></li>
+                        <li><a href="#" data-category="electronics">Electronics</a></li>
+                        <li><a href="#" data-category="fashion">Fashion</a></li>
+                        <li><a href="#" data-category="home">Home & Kitchen</a></li>
+                        <li><a href="#" data-category="all">Best Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="subnav-right">
+                    <a href="#" class="prime-banner">New launches from Mobile, Electronics & more</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main id="shop">
-        <!-- Hero Section -->
-        <section class="hero-section container">
-            <div class="hero-content">
-                <h1>Elevate Your <span>Lifestyle</span></h1>
-                <p>Discover the finest collection of electronics and premium men's fashion curated for the modern minimalist.</p>
-                <div class="hero-btns">
-                    <a href="#shop-grid" class="btn btn-primary">Shop Now</a>
-                    <a href="#" class="btn btn-outline">Explore More</a>
-                </div>
+    <!-- Sidebar Menu (Hidden by default) -->
+    <div class="overlay" id="menu-overlay"></div>
+    <aside class="sidebar-menu" id="side-menu">
+        <div class="sidebar-header">
+            <i data-lucide="circle-user"></i>
+            <span>Hello, sign in</span>
+            <button id="close-menu"><i data-lucide="x"></i></button>
+        </div>
+        <div class="sidebar-content">
+            <div class="menu-section">
+                <h3>Trending</h3>
+                <ul>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Movers and Shakers</a></li>
+                </ul>
             </div>
-            <div class="hero-image">
-                <img src="./assets/laptop.png" alt="Featured Product">
+            <div class="menu-divider"></div>
+            <div class="menu-section">
+                <h3>Shop By Category</h3>
+                <ul>
+                    <li><a href="#">Mobiles, Computers</a> <i data-lucide="chevron-right"></i></li>
+                    <li><a href="#">TV, Appliances, Electronics</a> <i data-lucide="chevron-right"></i></li>
+                    <li><a href="#">Men's Fashion</a> <i data-lucide="chevron-right"></i></li>
+                    <li><a href="#">Women's Fashion</a> <i data-lucide="chevron-right"></i></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <main class="page-content">
+        <!-- Hero Slider -->
+        <section class="hero-slider" id="hero-slider">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1600&h=600&fit=crop" alt="Great Indian Festival Sale">
+                </div>
+                <!-- Controls -->
+                <button class="slider-control prev"><i data-lucide="chevron-left"></i></button>
+                <button class="slider-control next"><i data-lucide="chevron-right"></i></button>
+            </div>
+            
+            <!-- Category Grid Cards (Overlapping Hero) -->
+            <div class="category-grid container">
+                <!-- Grid Card: Multi-category -->
+                <div class="grid-card multi-item">
+                    <h3>Up to 70% off | Clearance store</h3>
+                    <div class="card-items-4">
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1542491595-30fa986872b1?w=200&h=200&fit=crop" alt="Smartwatches">
+                            <span>Smartwatches</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop" alt="Eyewear">
+                            <span>Eyewear</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=200&h=200&fit=crop" alt="Headphones">
+                            <span>Audio</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&h=200&fit=crop" alt="Phones">
+                            <span>Mobiles</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">See more</a>
+                </div>
+
+                <!-- Grid Card: Single item large -->
+                <div class="grid-card single-item">
+                    <h3>Latest in Men's Fashion</h3>
+                    <div class="card-main-image">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop" alt="Shirt">
+                    </div>
+                    <a href="#" class="card-link">Shop now</a>
+                </div>
+
+                <!-- Grid Card: Login Promo -->
+                <div class="grid-card login-promo">
+                    <div class="promo-content">
+                        <h3>Sign in for your best experience</h3>
+                        <button class="btn-amazon-primary">Sign in securely</button>
+                    </div>
+                    <div class="promo-image">
+                        <img src="https://m.media-amazon.com/images/G/31/6170-O-Amazon-App-Desktop-Sign-in-Banner-English._CB419163273_.jpg" alt="Promo">
+                    </div>
+                </div>
+
+                <!-- Grid Card: Another multi-item -->
+                <div class="grid-card multi-item">
+                    <h3>Automotive essentials | Up to 60% off</h3>
+                    <div class="card-items-4">
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=200&h=200&fit=crop" alt="Car Audio">
+                            <span>Car Audio</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?w=200&h=200&fit=crop" alt="Tools">
+                            <span>Tools</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=200&h=200&fit=crop" alt="Cleaning">
+                            <span>Cleaning</span>
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1615906655593-ad0310811a0c?w=200&h=200&fit=crop" alt="Parts">
+                            <span>Spare Parts</span>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">Explore more</a>
+                </div>
             </div>
         </section>
 
-        <!-- Product Section -->
-        <section class="shop-container container">
-            <!-- Sidebar Filters -->
-            <aside class="sidebar">
-                <div class="filter-group">
-                    <h3>Categories</h3>
-                    <div class="category-tabs">
-                        <button class="cat-tab active" data-category="all">All Items</button>
-                        <button class="cat-tab" data-category="electronics">Electronics</button>
-                        <button class="cat-tab" data-category="fashion">Men's Fashion</button>
-                    </div>
-                </div>
+        <!-- Product Carousels -->
+        <section class="shelf-container container product-shelf">
+            <div class="shelf-header">
+                <h2>Today's Deals</h2>
+                <a href="#">See all deals</a>
+            </div>
+            <div class="shelf-row-scroll" id="deals-shelf">
+                <!-- Products dynamically injected here -->
+                <div class="shelf-loader">Loading products...</div>
+            </div>
+        </section>
 
-                <div class="filter-group">
-                    <h3>Price Range</h3>
-                    <div class="price-slider-container">
-                        <input type="range" id="priceRange" min="0" max="150000" step="500" value="150000">
-                        <div class="price-labels">
-                            <span>₹0</span>
-                            <span id="priceValue">₹1,50,000</span>
+        <!-- Recommended / Trending Section -->
+        <section class="shelf-container container product-shelf">
+            <div class="shelf-header">
+                <h2>Bestsellers in Electronics</h2>
+            </div>
+            <div class="shelf-row-scroll" id="electronics-shelf">
+                <!-- Products dynamically injected here -->
+            </div>
+        </section>
+
+        <!-- Search Results -->
+        <section class="search-results-section container" id="search-results" style="display: none;">
+            <div class="results-layout">
+                <!-- Sidebar Filters (Professional Amazon Sidebar) -->
+                <aside class="sidebar-filters">
+                    <div class="filter-section">
+                        <h4>Customer Reviews</h4>
+                        <ul class="filter-list">
+                            <li data-rating="4"><span class="stars">★★★★☆</span> & Up</li>
+                            <li data-rating="3"><span class="stars">★★★☆☆</span> & Up</li>
+                            <li data-rating="2"><span class="stars">★★☆☆☆</span> & Up</li>
+                            <li data-rating="1"><span class="stars">★☆☆☆☆</span> & Up</li>
+                        </ul>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Brand</h4>
+                        <ul class="filter-list">
+                            <li><input type="checkbox" class="brand-filter" value="apple"> Apple</li>
+                            <li><input type="checkbox" class="brand-filter" value="samsung"> Samsung</li>
+                            <li><input type="checkbox" class="brand-filter" value="dell"> Dell</li>
+                            <li><input type="checkbox" class="brand-filter" value="hp"> HP</li>
+                            <li><input type="checkbox" class="brand-filter" value="oneplus"> OnePlus</li>
+                        </ul>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Price</h4>
+                        <ul class="filter-list">
+                            <li data-price-max="1000">Under ₹1,000</li>
+                            <li data-price-min="1000" data-price-max="5000">₹1,000 - ₹5,000</li>
+                            <li data-price-min="5000" data-price-max="10000">₹5,000 - ₹10,000</li>
+                            <li data-price-min="10000" data-price-max="20000">₹10,000 - ₹20,000</li>
+                            <li data-price-min="20000">Over ₹20,000</li>
+                        </ul>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Availability</h4>
+                        <ul>
+                            <li><input type="checkbox"> Include Out of Stock</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="results-main">
+                    <div class="mobile-filter-header">
+                        <button class="btn-filter-toggle"><i data-lucide="filter"></i> Filters</button>
+                    </div>
+                    <div class="results-header">
+                        <div class="results-info">
+                            <span id="results-count-text">1-14 of over 8,000 results for</span>
+                            <h2 id="search-title">"laptop"</h2>
+                        </div>
+                        <div class="results-controls">
+                            <select id="sort-results">
+                                <option value="relevance">Sort by: Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Avg. Customer Review</option>
+                            </select>
                         </div>
                     </div>
+                    <div class="search-grid" id="search-grid">
+                        <!-- Product rows injected here -->
+                    </div>
                 </div>
+            </div>
+            <button class="back-link" id="back-to-home" style="margin-top:20px;"><i data-lucide="arrow-left"></i> Back to Home</button>
+        </section>
 
-                <div class="filter-group">
-                    <h3>Sort By</h3>
-                    <select id="sortSelect" class="custom-select">
-                        <option value="featured">Featured</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="rating-high">Rating: High to Low</option>
-                    </select>
-                </div>
-            </aside>
-
-            <!-- Product Grid -->
-            <div class="products-main" id="shop-grid">
-                <div class="grid-header">
-                    <h2 id="currentCategoryTitle">All Products</h2>
-                    <span id="productCount">8 Products Found</span>
+        <!-- Product Detail View (New - matches Image 2) -->
+        <section class="product-detail-section container" id="product-detail" style="display: none;">
+            <div class="detail-breadcrumb">
+                <a href="#" class="back-to-results"><i data-lucide="chevron-left"></i> Back to search</a>
+            </div>
+            <div class="detail-container">
+                <!-- Left: Images -->
+                <div class="detail-left">
+                    <div class="main-img-container">
+                        <img id="detail-main-img" src="" alt="">
+                    </div>
                 </div>
                 
-                <div class="product-grid" id="productGrid">
-                    <!-- Products will be injected here via JS -->
+                <!-- Center: Info -->
+                <div class="detail-center">
+                    <h1 id="detail-title">Product Title</h1>
+                    <div class="detail-meta">
+                        <div class="rating-box">
+                            <span class="stars" id="detail-stars">★★★★☆</span>
+                            <span class="count" id="detail-reviews">2,524 ratings</span>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="price-box">
+                        <div class="discount">-17% <span class="curr-price" id="detail-price">₹599</span></div>
+                        <div class="mrp">M.R.P.: <span id="detail-mrp">₹719</span></div>
+                        <p class="taxes">Inclusive of all taxes</p>
+                    </div>
+                    <div class="offers-row">
+                        <div class="offer-card">
+                            <strong>Bank Offer</strong>
+                            <p>Upto ₹1,000.00 discount on select Credit Cards</p>
+                        </div>
+                        <div class="offer-card">
+                            <strong>Partner Offers</strong>
+                            <p>Get GST invoice and save up to 18%</p>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="features-list">
+                        <h3>About this item</h3>
+                        <ul id="detail-features">
+                            <li>Premium quality material</li>
+                            <li>Durable and long lasting</li>
+                            <li>Perfect for every occasion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Buy Box -->
+                <div class="detail-right">
+                    <div class="buy-box">
+                        <div class="price-final" id="detail-buy-price">₹599.00</div>
+                        <p class="delivery">FREE delivery <strong>Sunday, 29 March</strong>. <a href="#">Details</a></p>
+                        <p class="stock-status">In stock</p>
+                        <div class="buy-actions">
+                            <select id="quantity-select">
+                                <option value="1">Quantity: 1</option>
+                                <option value="2">Quantity: 2</option>
+                                <option value="3">Quantity: 3</option>
+                            </select>
+                            <button class="btn-amazon-primary detail-add-cart">Add to Cart</button>
+                            <button class="btn-amazon-buy">Buy Now</button>
+                        </div>
+                        <div class="secure-info">
+                            <i data-lucide="lock"></i> Secure transaction
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <a href="#">MODERN<span>STORE</span></a>
-                <p>Curating the best in tech and style for your everyday essentials.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Shop All</a></li>
-                    <li><a href="#">Latest arrivals</a></li>
-                    <li><a href="#">Best Sellers</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Newsletter</h4>
-                <p>Get exclusive deals and updates.</p>
-                <div class="newsletter-box">
-                    <input type="email" placeholder="email@example.com">
-                    <button>Join</button>
+    <!-- Footer -->
+    <footer class="amazon-footer">
+        <a href="#top" class="back-to-top">Back to top</a>
+        
+        <div class="footer-links-container">
+            <div class="container footer-grid">
+                <div class="column">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Amazon Science</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell on Amazon</a></li>
+                        <li><a href="#">Sell under Amazon Accelerator</a></li>
+                        <li><a href="#">Protect and Build Your Brand</a></li>
+                        <li><a href="#">Amazon Global Selling</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">COVID-19 and Amazon</a></li>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Returns Centre</a></li>
+                        <li><a href="#">100% Purchase Protection</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2024 ModernStore. All rights reserved.</p>
+            <div class="footer-logo">
+                <span class="a-logo">Wishllist<span> karo.com</span></span>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 1996-2024, Wishllist karo.com, Inc. or its affiliates</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Main Logic Script -->
+    <!-- Cart Sidebar/Modal -->
+    <div class="overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Shopping Cart</h3>
+            <button id="close-cart" class="close-btn"><i data-lucide="x"></i></button>
+        </div>
+        <div class="drawer-content" id="cart-items">
+            <p class="empty-msg">Your Amazon Cart is empty.</p>
+        </div>
+        <div class="drawer-footer">
+            <div class="subtotal">Subtotal: <strong id="cart-subtotal">₹0.00</strong></div>
+            <button class="btn-amazon-primary">Proceed to Buy</button>
+        </div>
+    </div>
+    
+    <!-- Floating Navigation Controls -->
+    <div class="floating-controls">
+        <button id="scroll-top" class="float-btn" title="Back to Top"><i data-lucide="chevron-up"></i></button>
+        <button id="refresh-view" class="float-btn" title="Refresh View"><i data-lucide="rotate-cw"></i></button>
+        <button id="scroll-bottom" class="float-btn" title="Go to Bottom"><i data-lucide="chevron-down"></i></button>
+    </div>
+
+    <!-- Scripts -->
     <script type="module" src="main.js"></script>
     <script>
-        // Initialize Lucide icons
+        // Lucide Icons initialization
         lucide.createIcons();
     </script>
 </body>
