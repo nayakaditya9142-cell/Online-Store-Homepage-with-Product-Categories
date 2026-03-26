@@ -425,6 +425,12 @@ function bindEvents() {
             els.menuOverlay.classList.remove('active');
         }
 
+        // Open Cart
+        if (e.target.id === 'cart-nav' || e.target.closest('#cart-nav')) {
+            e.preventDefault();
+            openCart();
+        }
+
         // Add to Cart
         const addBtn = e.target.closest('.add-to-cart-btn');
         if (addBtn) {
