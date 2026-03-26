@@ -1,21 +1,22 @@
-/* -- Amazon India Style Design -- */
-/* Colors & Variables */
+/* -- Modern Premium Tech Theme -- */
 :root {
-    --header-bg: #131921;
-    --subnav-bg: #232f3e;
-    --search-btn: #febd69;
-    --search-btn-hover: #f3a847;
-    --amazon-yellow: #ffd814;
-    --amazon-yellow-hover: #f7ca00;
-    --page-bg: #eaeded;
-    --text-primary: #111111;
-    --text-link: #007185;
-    --text-light: #565959;
-    --border-light: #ddd;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --shadow-soft: 0 1px 3px rgba(0,0,0,0.1);
-    --transition-fast: 0.2s ease;
+    --theme-primary: #0f172a;      /* Dark Slate */
+    --theme-secondary: #1e293b;    /* Lighter Slate */
+    --theme-accent: #6366f1;       /* Indigo Glow */
+    --theme-accent-light: #818cf8;
+    --theme-cyan: #0ea5e9;         /* Vibrant Cyan for CTA */
+    --page-bg: #f1f5f9;            /* Soft cool gray */
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-link: #6366f1;
+    --border-soft: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Reset & Basic Styles */
@@ -30,22 +31,22 @@ html {
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     color: var(--text-primary);
     background-color: var(--page-bg);
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
     color: var(--text-link);
-    transition: var(--transition-fast);
+    transition: var(--transition);
 }
 
 a:hover {
-    color: #c45500;
+    color: var(--theme-accent-light);
 }
 
 ul {
@@ -63,17 +64,18 @@ ul {
     padding: 0 1.5%;
 }
 
-/* -- Amazon Header -- */
-.amazon-header {
+/* -- Modern Premium Header -- */
+.site-header {
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .header-main {
-    background-color: var(--header-bg);
+    background-color: var(--theme-primary);
     color: #ffffff;
-    padding: 6px 0;
-    min-height: 60px;
+    padding: 12px 0;
+    min-height: 70px;
     display: flex;
     align-items: center;
 }
@@ -93,22 +95,19 @@ ul {
 
 .nav-logo a {
     color: #fff;
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    padding: 5px 8px;
-    border: 1px solid transparent;
+    padding: 5px 12px;
+    letter-spacing: -0.5px;
 }
 
-.nav-logo a:hover {
-    border-color: #fff;
-    border-radius: 2px;
-}
-
-.a-logo span {
-    font-size: 0.8rem;
-    color: var(--search-btn);
+.brand-name span {
+    font-size: 0.9rem;
+    color: var(--theme-cyan);
+    margin-left: 2px;
+    font-weight: 400;
 }
 
 .nav-location {
@@ -152,53 +151,71 @@ ul {
 
 .nav-search {
     display: flex;
-    height: 40px;
-    background: #fff;
-    border-radius: 4px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
 }
 
 .nav-search:focus-within {
-    box-shadow: 0 0 0 2px var(--search-btn-hover);
+    background: #fff;
+    border-color: var(--theme-accent);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
 .search-category select {
-    background: #f3f3f3;
+    background: transparent;
     border: none;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     height: 100%;
-    padding: 0 10px;
-    font-size: 0.8rem;
-    color: #555;
+    padding: 0 15px;
+    font-size: 0.9rem;
+    color: #fff;
     cursor: pointer;
     outline: none;
+}
+
+.nav-search:focus-within .search-category select {
+    color: var(--text-primary);
+    border-color: #eee;
 }
 
 .nav-search input {
     flex: 1;
     border: none;
-    padding: 0 12px;
+    padding: 0 16px;
     font-size: 1rem;
     outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.nav-search:focus-within input {
+    color: var(--text-primary);
 }
 
 .search-submit {
-    background: var(--search-btn);
+    background: var(--theme-accent);
     border: none;
-    width: 45px;
+    width: 60px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
 }
 
 .search-submit:hover {
-    background: var(--search-btn-hover);
+    background: var(--theme-accent-light);
 }
 
 .search-submit i {
-    color: #333;
+    color: #fff;
+    width: 22px;
+    height: 22px;
 }
 
 /* Right: Actions */
@@ -365,9 +382,10 @@ ul {
 
 /* -- Sub Navigation -- */
 .header-subnav {
-    background-color: var(--subnav-bg);
+    background-color: var(--theme-secondary);
     color: #fff;
-    padding: 2px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .subnav-flex {
@@ -515,16 +533,26 @@ ul {
 }
 
 .grid-card {
-    background: #fff;
-    padding: 20px;
+    background: var(--card-bg);
+    padding: 24px;
     display: flex;
     flex-direction: column;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 1px solid var(--border-soft);
+}
+
+.grid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .grid-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--theme-primary);
 }
 
 .card-link {
@@ -581,20 +609,23 @@ ul {
     gap: 20px;
 }
 
-.btn-amazon-primary {
-    background: var(--amazon-yellow);
-    border: 1px solid #a88734;
-    padding: 10px 0;
+.btn-primary {
+    background: var(--theme-accent);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
     width: 100%;
-    border-radius: 8px;
-    font-weight: 500;
+    border-radius: var(--radius-md);
+    font-weight: 600;
     cursor: pointer;
     margin-top: 15px;
-    transition: 0.1s;
+    transition: var(--transition);
 }
 
-.btn-amazon-primary:hover {
-    background: var(--amazon-yellow-hover);
+.btn-primary:hover {
+    background: var(--theme-accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
 }
 
 .promo-image img {
@@ -745,6 +776,23 @@ ul {
     padding-right: 15px;
 }
 
+.mobile-filter-header-inner {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#close-filters {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
 .filter-section {
     margin-bottom: 25px;
     border-bottom: 1px solid #f0f0f0;
@@ -773,9 +821,11 @@ ul {
     transition: color 0.1s;
 }
 
-.filter-section li:hover {
+.filter-section li:hover,
+.filter-section li.active-filter {
     color: var(--amazon-orange);
     text-decoration: underline;
+    font-weight: 700;
 }
 
 .filter-section input[type="checkbox"] {
@@ -840,20 +890,69 @@ ul {
     cursor: pointer;
 }
 
+/* Responsive Search Results */
 @media (max-width: 992px) {
-    .btn-filter-toggle { display: flex; }
+    .results-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .sidebar-filters {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        z-index: 3000;
+        padding: 20px;
+        overflow-y: auto;
+        transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+    }
+
+    .sidebar-filters.active {
+        left: 0;
+    }
+
+    .mobile-filter-header-inner {
+        display: flex;
+    }
+
+    .btn-filter-toggle {
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    .product-card {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 25px;
+    }
+
+    .card-img-wrap {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-price {
+        font-size: 1.4rem;
+    }
 }
 
 /* List Item Card Styling (Amazon Row View) */
 .product-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
     display: grid;
     grid-template-columns: 240px 1fr;
-    gap: 20px;
-    padding: 15px;
-    transition: box-shadow 0.2s;
+    gap: 24px;
+    padding: 20px;
+    transition: var(--transition);
     cursor: pointer;
     min-height: 280px;
 }
@@ -932,13 +1031,16 @@ ul {
 }
 
 .card-badge {
-    background: #232f3e;
+    background: var(--theme-primary);
     color: #fff;
-    font-size: 0.75rem;
-    padding: 3px 10px;
-    border-radius: 2px;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
     margin-bottom: 8px;
     width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .card-delivery {
@@ -952,19 +1054,23 @@ ul {
 }
 
 .add-to-cart-btn {
-    background: var(--amazon-yellow);
-    border: 1px solid #a88734;
-    border-radius: 20px;
-    padding: 6px 15px;
-    font-weight: 500;
+    background: var(--theme-cyan);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 10px 24px;
+    font-weight: 600;
     cursor: pointer;
     width: fit-content;
-    margin-top: 10px;
-    font-size: 0.85rem;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
 .add-to-cart-btn:hover {
-    background: var(--amazon-yellow-hover);
+    background: #0284c7;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    transform: scale(1.02);
 }
 
 /* -- Sidebar Menu Styling (Image 3) -- */
@@ -1125,7 +1231,7 @@ ul {
     gap: 10px;
 }
 
-.stars { color: #ffa41c; font-size: 1.2rem; }
+.stars { color: var(--theme-cyan); font-size: 1.2rem; }
 .count { color: var(--text-link); font-size: 0.9rem; }
 
 .divider {
@@ -1222,16 +1328,17 @@ ul {
     width: 100%;
 }
 
-.btn-amazon-buy {
-    background: #ffa41c;
-    border: 1px solid #a88734;
+.btn-buy {
+    background: var(--theme-cyan);
+    color: #fff;
+    border: none;
     padding: 10px 0;
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
 }
 
-.btn-amazon-buy:hover { background: #fa8214; }
+.btn-buy:hover { background: #0284c7; }
 
 .secure-info {
     margin-top: 20px;
@@ -1413,8 +1520,8 @@ ul {
 }
 
 /* -- Footer Styles -- */
-.amazon-footer {
-    background: #232f3e;
+.site-footer {
+    background: var(--theme-primary);
     color: #fff;
     margin-top: 40px;
 }

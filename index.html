@@ -7,7 +7,7 @@
     <!-- Google Fonts: Amazon uses custom fonts, but Inter captures the clean look well -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
@@ -15,15 +15,15 @@
 <body>
 
     <!-- Header / Navbar Section -->
-    <header class="amazon-header">
+    <header class="site-header">
         <!-- Top Header: Logo, Search, Account -->
         <div class="header-main" id="top">
             <div class="container-fluid header-flex">
                 <!-- Logo & Location -->
                 <div class="header-left">
                     <div class="nav-logo">
-                        <a href="index.html" class="amazon-logo">
-                            <span class="a-logo">Wishllist<span> karo.com</span></span>
+                        <a href="index.html" class="site-logo">
+                            <span class="brand-name">Wishllist<span> karo.com</span></span>
                         </a>
                     </div>
                     <div class="nav-location" id="location-picker">
@@ -41,6 +41,7 @@
                         <div class="search-category">
                             <select id="search-cat-dropdown">
                                 <option value="all">All Categories</option>
+                                <option value="fresh">Fresh</option>
                                 <option value="electronics">Electronics</option>
                                 <option value="fashion">Fashion</option>
                                 <option value="home">Home & Kitchen</option>
@@ -83,7 +84,7 @@
                         </div>
                         <div class="header-dropdown account-dropdown">
                             <div class="sign-in-btn-container">
-                                <button class="btn-amazon-primary">Sign in</button>
+                                <button class="btn-primary">Sign in</button>
                                 <p>New customer? <a href="#">Start here.</a></p>
                             </div>
                             <div class="dropdown-columns">
@@ -232,7 +233,7 @@
                 <div class="grid-card login-promo">
                     <div class="promo-content">
                         <h3>Sign in for your best experience</h3>
-                        <button class="btn-amazon-primary">Sign in securely</button>
+                        <button class="btn-primary">Sign in securely</button>
                     </div>
                     <div class="promo-image">
                         <img src="https://m.media-amazon.com/images/G/31/6170-O-Amazon-App-Desktop-Sign-in-Banner-English._CB419163273_.jpg" alt="Promo">
@@ -292,6 +293,10 @@
             <div class="results-layout">
                 <!-- Sidebar Filters (Professional Amazon Sidebar) -->
                 <aside class="sidebar-filters">
+                    <div class="mobile-filter-header-inner">
+                        <h3>Filters</h3>
+                        <button id="close-filters"><i data-lucide="x"></i></button>
+                    </div>
                     <div class="filter-section">
                         <h4>Customer Reviews</h4>
                         <ul class="filter-list">
@@ -303,12 +308,8 @@
                     </div>
                     <div class="filter-section">
                         <h4>Brand</h4>
-                        <ul class="filter-list">
-                            <li><input type="checkbox" class="brand-filter" value="apple"> Apple</li>
-                            <li><input type="checkbox" class="brand-filter" value="samsung"> Samsung</li>
-                            <li><input type="checkbox" class="brand-filter" value="dell"> Dell</li>
-                            <li><input type="checkbox" class="brand-filter" value="hp"> HP</li>
-                            <li><input type="checkbox" class="brand-filter" value="oneplus"> OnePlus</li>
+                        <ul class="filter-list" id="brand-filter-list">
+                            <!-- Dynamically populated -->
                         </ul>
                     </div>
                     <div class="filter-section">
@@ -416,8 +417,8 @@
                                 <option value="2">Quantity: 2</option>
                                 <option value="3">Quantity: 3</option>
                             </select>
-                            <button class="btn-amazon-primary detail-add-cart">Add to Cart</button>
-                            <button class="btn-amazon-buy">Buy Now</button>
+                            <button class="btn-primary detail-add-cart">Add to Cart</button>
+                            <button class="btn-buy">Buy Now</button>
                         </div>
                         <div class="secure-info">
                             <i data-lucide="lock"></i> Secure transaction
@@ -429,7 +430,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="amazon-footer">
+    <footer class="site-footer">
         <a href="#top" class="back-to-top">Back to top</a>
         
         <div class="footer-links-container">
@@ -474,7 +475,7 @@
 
         <div class="footer-bottom">
             <div class="footer-logo">
-                <span class="a-logo">Wishllist<span> karo.com</span></span>
+                <span class="brand-name">Wishllist<span> karo.com</span></span>
             </div>
             <div class="footer-legal">
                 <p>&copy; 1996-2024, Wishllist karo.com, Inc. or its affiliates</p>
@@ -494,7 +495,7 @@
         </div>
         <div class="drawer-footer">
             <div class="subtotal">Subtotal: <strong id="cart-subtotal">₹0.00</strong></div>
-            <button class="btn-amazon-primary">Proceed to Buy</button>
+            <button class="btn-primary">Proceed to Buy</button>
         </div>
     </div>
     

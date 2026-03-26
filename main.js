@@ -40,6 +40,9 @@ const els = {
     sortSelect: document.getElementById('sort-results'),
     productDetailSection: document.getElementById('product-detail'),
     backToResults: document.querySelector('.back-to-results'),
+    filterToggle: document.querySelector('.btn-filter-toggle'),
+    sidebarFilters: document.querySelector('.sidebar-filters'),
+    closeFilters: document.getElementById('close-filters'),
     menuOverlay: document.getElementById('menu-overlay'),
     sideMenu: document.getElementById('side-menu'),
     closeMenu: document.getElementById('close-menu'),
@@ -86,7 +89,7 @@ function renderSearchResults() {
             <div class="empty-results">
                 <h3>No results found.</h3>
                 <p>Try checking your spelling or use more general terms.</p>
-                <button class="btn-amazon-primary" onclick="showHome()">Return Home</button>
+                <button class="btn-primary" onclick="showHome()">Return Home</button>
             </div>
         `;
     }
@@ -141,6 +144,41 @@ function showProductDetail(id) {
     }
     
     window.scrollTo(0, 0);
+}
+
+// --- Dynamic Filter Population ---
+function updateBrandFilters(products) {
+    const list = document.getElementById('brand-filter-list');
+    if (!list || !products) return;
+
+    // Extract unique brands (first word of name)
+    const brands = [...new Set(products.map(p => p.name.split(' ')[0]))].sort();
+    
+    // If no brands, show None or empty
+    if (brands.length === 0) {
+        list.innerHTML = '<li class="empty-filter">No brands found</li>';
+        return;
+    }
+
+    list.innerHTML = brands.map(brand => {
+        const val = brand.toLowerCase();
+        const isChecked = state.activeFilters.brands.includes(val);
+        return `
+            <li>
+                <input type="checkbox" class="brand-filter" value="${val}" ${isChecked ? 'checked' : ''}>
+                <span>${brand}</span>
+            </li>
+        `;
+    }).join('');
+
+    // Re-bind change events
+    list.querySelectorAll('.brand-filter').forEach(chk => {
+        chk.addEventListener('change', () => {
+            const checked = Array.from(list.querySelectorAll('.brand-filter:checked')).map(c => c.value);
+            state.activeFilters.brands = checked;
+            applyFilters();
+        });
+    });
 }
 
 // --- Cart Functions ---
@@ -200,6 +238,7 @@ function closeCart() {
         els.cartOverlay.classList.remove('active');
     }
 }
+
 
 // --- Component Builders ---
 function createShelfItem(product) {
@@ -272,7 +311,10 @@ function applyFilters() {
         return matchesTerm && matchesCat;
     });
 
-    // Apply Sidebar Refinements
+    // Update the dynamic brand list based on these category/search results
+    updateBrandFilters(results);
+
+    // Apply Sidebar Refinements (Refining the results)
     if (state.activeFilters.rating > 0) {
         results = results.filter(p => p.rating >= state.activeFilters.rating);
     }
@@ -329,6 +371,7 @@ function bindEvents() {
             if (catName.includes('mobile')) showCategory('mobiles');
             else if (catName.includes('electronics')) showCategory('electronics');
             else if (catName.includes('fashion')) showCategory('fashion');
+            else if (catName.includes('fresh')) showCategory('fresh');
             else showCategory('all');
             
             els.sideMenu.classList.remove('active');
@@ -370,6 +413,18 @@ function bindEvents() {
             document.querySelectorAll('.account-dropdown').forEach(d => d.classList.remove('active-mobile'));
         }
 
+        // Mobile Filter Toggle
+        if (e.target.closest('.btn-filter-toggle')) {
+            els.sidebarFilters.classList.add('active');
+            els.menuOverlay.classList.add('active');
+        }
+        
+        // Close Filter Sidebar
+        if (e.target.id === 'close-filters' || e.target.closest('#close-filters') || (e.target.id === 'menu-overlay' && els.sidebarFilters.classList.contains('active'))) {
+            els.sidebarFilters.classList.remove('active');
+            els.menuOverlay.classList.remove('active');
+        }
+
         // Add to Cart
         const addBtn = e.target.closest('.add-to-cart-btn');
         if (addBtn) {
@@ -389,29 +444,32 @@ function bindEvents() {
         });
     });
 
-    // Sidebar Refinement Listeners
-    document.querySelectorAll('[data-rating]').forEach(li => {
-        li.addEventListener('click', () => {
-            state.activeFilters.rating = parseFloat(li.dataset.rating);
-            applyFilters();
-        });
-    });
+    // Sidebar Refinement Listeners (Using robust delegation)
+    const sidebar = document.querySelector('.sidebar-filters');
+    if (sidebar) {
+        sidebar.addEventListener('click', (e) => {
+            // Rating filter
+            const ratingLi = e.target.closest('[data-rating]');
+            if (ratingLi) {
+                state.activeFilters.rating = parseFloat(ratingLi.dataset.rating);
+                // Visual feedback
+                sidebar.querySelectorAll('[data-rating]').forEach(el => el.classList.remove('active-filter'));
+                ratingLi.classList.add('active-filter');
+                applyFilters();
+            }
 
-    document.querySelectorAll('.brand-filter').forEach(chk => {
-        chk.addEventListener('change', () => {
-            const checked = Array.from(document.querySelectorAll('.brand-filter:checked')).map(c => c.value);
-            state.activeFilters.brands = checked;
-            applyFilters();
+            // Price filter
+            const priceLi = e.target.closest('[data-price-min], [data-price-max]');
+            if (priceLi) {
+                state.activeFilters.price.min = parseFloat(priceLi.dataset.priceMin || 0);
+                state.activeFilters.price.max = parseFloat(priceLi.dataset.priceMax || Infinity);
+                // Visual feedback
+                sidebar.querySelectorAll('[data-price-min]').forEach(el => el.classList.remove('active-filter'));
+                priceLi.classList.add('active-filter');
+                applyFilters();
+            }
         });
-    });
-
-    document.querySelectorAll('[data-price-min], [data-price-max]').forEach(li => {
-        li.addEventListener('click', () => {
-            state.activeFilters.price.min = parseFloat(li.dataset.priceMin || 0);
-            state.activeFilters.price.max = parseFloat(li.dataset.priceMax || Infinity);
-            applyFilters();
-        });
-    });
+    }
 
     // Floating Controls
     const st = document.getElementById('scroll-top');
