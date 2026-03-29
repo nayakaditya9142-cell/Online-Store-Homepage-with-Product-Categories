@@ -83,7 +83,10 @@
                             <span class="nav-line-2">Account & Lists <i data-lucide="chevron-down"></i></span>
                         </div>
                         <div class="header-dropdown account-dropdown">
-                            <div class="sign-in-btn-container">
+                            <button id="close-account-btn" style="position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.05); border: none; cursor: pointer; padding: 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; transition: 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.1)'" onmouseout="this.style.background='rgba(0,0,0,0.05)'">
+                                <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                            </button>
+                            <div class="sign-in-btn-container" style="padding-top: 15px;">
                                 <button class="btn-primary">Sign in</button>
                                 <p>New customer? <a href="#">Start here.</a></p>
                             </div>

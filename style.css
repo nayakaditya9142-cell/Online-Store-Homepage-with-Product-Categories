@@ -283,6 +283,10 @@ ul {
     display: block !important;
 }
 
+.dropdown-trigger.force-hide .header-dropdown {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .header-dropdown {
         position: fixed;

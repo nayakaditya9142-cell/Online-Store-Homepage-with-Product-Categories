@@ -402,7 +402,22 @@ function bindEvents() {
             document.querySelectorAll('.lang-dropdown').forEach(d => d.classList.remove('active-mobile'));
         }
 
-        if (accountTrigger && !accountLink) {
+        const closeAccountBtn = e.target.closest('#close-account-btn');
+        if (closeAccountBtn) {
+            e.stopPropagation();
+            const trigger = closeAccountBtn.closest('.dropdown-trigger');
+            if (trigger) {
+                const dropdown = trigger.querySelector('.header-dropdown');
+                if (dropdown) dropdown.classList.remove('active-mobile');
+                
+                // For PC, hack to hide the pure css hover state
+                trigger.classList.add('force-hide');
+                trigger.addEventListener('mouseleave', () => trigger.classList.remove('force-hide'), {once: true});
+            }
+            return;
+        }
+
+        if (accountTrigger && !accountLink && !closeAccountBtn) {
             accountTrigger.querySelector('.header-dropdown').classList.toggle('active-mobile');
         } else if (accountLink) {
             document.querySelectorAll('.header-dropdown').forEach(d => d.classList.remove('active-mobile'));
