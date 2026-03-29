@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
     <!-- Header / Navbar Section -->
     <header class="site-header">
@@ -113,10 +113,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nav-extra orders-nav">
+                    <a href="#" class="nav-extra orders-nav" style="text-decoration: none;">
                         <span class="nav-line-1">Returns</span>
                         <span class="nav-line-2">& Orders</span>
-                    </div>
+                    </a>
                     <div class="nav-cart" id="cart-nav">
                         <div class="cart-icon-container">
                             <i data-lucide="shopping-cart"></i>
@@ -131,8 +131,10 @@
         <!-- Sub-navigation: Category Links -->
         <nav class="header-subnav">
                 <div class="subnav-left">
-                    <button class="menu-btn" id="side-menu-toggle">
+                    <button class="menu-btn" id="side-menu-toggle" style="margin-right: 15px;">
                         <i data-lucide="menu"></i>
+                    </button>
+                    <button class="menu-btn" id="side-menu-toggle-text">
                         <span>All</span>
                     </button>
                     <a href="#" class="subnav-brand" data-category="all">Wishllist karo.com</a>
@@ -145,10 +147,7 @@
                         <li><a href="#" data-category="all">Best Sellers</a></li>
                     </ul>
                 </div>
-                <div class="subnav-right">
-                    <a href="#" class="prime-banner">New launches from Mobile, Electronics & more</a>
-                </div>
-            </div>
+
         </nav>
     </header>
 
@@ -186,8 +185,27 @@
         <!-- Hero Slider -->
         <section class="hero-slider" id="hero-slider">
             <div class="slider-wrapper">
-                <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1600&h=600&fit=crop" alt="Great Indian Festival Sale">
+                <div class="slide active promo-slide">
+                    <!-- Cosmic Background Layers -->
+                    <div class="cosmic-bg">
+                        <div class="star"></div><div class="star"></div><div class="star"></div>
+                    </div>
+                    
+                    <div class="luxury-promo-wrapper">
+                        <div class="luxury-text-box">
+                            <span class="eyebrow">The Biggest Event is Here</span>
+                            <h1 class="liquid-sale-text">
+                                <span class="char" data-char="S">S</span>
+                                <span class="char" data-char="A">A</span>
+                                <span class="char" data-char="L">L</span>
+                                <span class="char" data-char="E">E</span>
+                            </h1>
+                            <p class="luxury-cta-subtext">UP TO 80% OFF PREMIUM COLLECTIONS</p>
+                            <div class="luxury-btn-group">
+                                <a href="#category-grid" class="btn-luxury" style="text-decoration:none;">Shop Now <i data-lucide="arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Controls -->
                 <button class="slider-control prev"><i data-lucide="chevron-left"></i></button>
@@ -195,13 +213,13 @@
             </div>
             
             <!-- Category Grid Cards (Overlapping Hero) -->
-            <div class="category-grid container">
+            <div id="category-grid" class="category-grid container" style="scroll-margin-top: 80px;">
                 <!-- Grid Card: Multi-category -->
                 <div class="grid-card multi-item">
                     <h3>Up to 70% off | Clearance store</h3>
                     <div class="card-items-4">
                         <div class="item">
-                            <img src="https://images.unsplash.com/photo-1542491595-30fa986872b1?w=200&h=200&fit=crop" alt="Smartwatches">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop" alt="Smartwatches">
                             <span>Smartwatches</span>
                         </div>
                         <div class="item">
@@ -236,7 +254,7 @@
                         <button class="btn-primary">Sign in securely</button>
                     </div>
                     <div class="promo-image">
-                        <img src="https://m.media-amazon.com/images/G/31/6170-O-Amazon-App-Desktop-Sign-in-Banner-English._CB419163273_.jpg" alt="Promo">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=150&fit=crop" alt="Promo">
                     </div>
                 </div>
 
@@ -249,7 +267,7 @@
                             <span>Car Audio</span>
                         </div>
                         <div class="item">
-                            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d59085?w=200&h=200&fit=crop" alt="Tools">
+                            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=200&h=200&fit=crop" alt="Tools">
                             <span>Tools</span>
                         </div>
                         <div class="item">
@@ -257,7 +275,7 @@
                             <span>Cleaning</span>
                         </div>
                         <div class="item">
-                            <img src="https://images.unsplash.com/photo-1615906655593-ad0310811a0c?w=200&h=200&fit=crop" alt="Parts">
+                            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=200&h=200&fit=crop" alt="Parts">
                             <span>Spare Parts</span>
                         </div>
                     </div>
@@ -270,7 +288,7 @@
         <section class="shelf-container container product-shelf">
             <div class="shelf-header">
                 <h2>Today's Deals</h2>
-                <a href="#">See all deals</a>
+                <a href="#" id="see-all-deals">See all deals</a>
             </div>
             <div class="shelf-row-scroll" id="deals-shelf">
                 <!-- Products dynamically injected here -->
@@ -290,6 +308,9 @@
 
         <!-- Search Results -->
         <section class="search-results-section container" id="search-results" style="display: none;">
+            <div style="padding: 20px 0 10px 0;">
+                <button class="back-link" id="back-to-home" style="background: none; border: 1px solid #ddd; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 500;"><i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i> Back to Home</button>
+            </div>
             <div class="results-layout">
                 <!-- Sidebar Filters (Professional Amazon Sidebar) -->
                 <aside class="sidebar-filters">
@@ -353,7 +374,6 @@
                     </div>
                 </div>
             </div>
-            <button class="back-link" id="back-to-home" style="margin-top:20px;"><i data-lucide="arrow-left"></i> Back to Home</button>
         </section>
 
         <!-- Product Detail View (New - matches Image 2) -->
@@ -430,7 +450,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer id="bottom" class="site-footer">
         <a href="#top" class="back-to-top">Back to top</a>
         
         <div class="footer-links-container">
@@ -495,15 +515,15 @@
         </div>
         <div class="drawer-footer">
             <div class="subtotal">Subtotal: <strong id="cart-subtotal">₹0.00</strong></div>
-            <button class="btn-primary">Proceed to Buy</button>
+            <button class="btn-primary" id="checkout-btn">Proceed to Buy</button>
         </div>
     </div>
     
     <!-- Floating Navigation Controls -->
     <div class="floating-controls">
-        <button id="scroll-top" class="float-btn" title="Back to Top"><i data-lucide="chevron-up"></i></button>
+        <a href="#top" id="scroll-top" class="float-btn" title="Back to Top"><i data-lucide="chevron-up"></i></a>
         <button id="refresh-view" class="float-btn" title="Refresh View"><i data-lucide="rotate-cw"></i></button>
-        <button id="scroll-bottom" class="float-btn" title="Go to Bottom"><i data-lucide="chevron-down"></i></button>
+        <a href="#bottom" id="scroll-bottom" class="float-btn" title="Go to Bottom"><i data-lucide="chevron-down"></i></a>
     </div>
 
     <!-- Scripts -->

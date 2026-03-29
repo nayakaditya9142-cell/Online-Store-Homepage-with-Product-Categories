@@ -8,7 +8,7 @@ const products = [
         price: 129990,
         rating: 4.8,
         reviews: 25000,
-        image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/736x/5f/11/2c/5f112c7a5d55b72eb012319f884347fa.jpg",
         description: "Experience the ultimate iPhone with titanium design and A17 Pro chip.",
         badge: "Bestseller"
     },
@@ -32,7 +32,7 @@ const products = [
         price: 106990,
         rating: 4.5,
         reviews: 5400,
-        image: "https://images.unsplash.com/photo-1696426375306-0562be646270?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/1200x/37/1f/bc/371fbc0e6566beac9803cbb8a8a979ff.jpg",
         description: "The most advanced Pixel yet, with a refined design and powerful Google AI.",
         badge: ""
     },
@@ -44,7 +44,7 @@ const products = [
         price: 69999,
         rating: 4.6,
         reviews: 12000,
-        image: "https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/474x/77/d3/ca/77d3cae4f9b677c5b2747bf110d609bb.jpg",
         description: "Fast and smooth performance with revolutionary Hasselblad camera.",
         badge: "Great Value"
     },
@@ -68,7 +68,7 @@ const products = [
         price: 99999,
         rating: 4.7,
         reviews: 800,
-        image: "https://images.unsplash.com/photo-1605236453023-49455138fd2a?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/736x/e0/bf/be/e0bfbe214ad2b0a70a0c0af30b7b486c.jpg",
         description: "Leica optics and unparalleled camera performance for photographers.",
         badge: "New Release"
     },
@@ -130,7 +130,7 @@ const products = [
         price: 154990,
         rating: 4.9,
         reviews: 3200,
-        image: "https://images.unsplash.com/photo-1517336714460-4c9889a79956?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/736x/cb/fd/1c/cbfd1c6a2db6bdb1dd8b72020388013d.jpg",
         description: "Mind-blowing performance for pros with the M3 chip and liquid retina display.",
         badge: "Premium Choice"
     },
@@ -142,7 +142,7 @@ const products = [
         price: 112000,
         rating: 4.5,
         reviews: 4500,
-        image: "https://images.unsplash.com/photo-1593642828171-49a022b1130d?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/1200x/e0/a0/55/e0a055dd1c874856c7188142220ef886.jpg",
         description: "Ultra-portable performance with an edge-to-edge InfinityEdge display.",
         badge: "Thin & Light"
     },
@@ -154,7 +154,7 @@ const products = [
         price: 125000,
         rating: 4.4,
         reviews: 2100,
-        image: "https://images.unsplash.com/photo-1544006659-f0b21884cb1d?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/29/c7/98/29c798c496d6a899a47b9501b3572a76.jpg",
         description: "Versatile 2-in-1 design with stunning 4K OLED display and long battery life.",
         badge: "Versatile"
     },
@@ -166,7 +166,7 @@ const products = [
         price: 139990,
         rating: 4.8,
         reviews: 1200,
-        image: "https://images.unsplash.com/photo-1516387084933-47069792e3ea?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/736x/8d/4e/6d/8d4e6da4a23cc557c60c8cd386bf3694.jpg",
         description: "The world's most powerful 14-inch gaming laptop with Ryzen 9 and RTX 40-series.",
         badge: "Gamer's Choice"
     },
@@ -178,7 +178,7 @@ const products = [
         price: 29990,
         rating: 4.7,
         reviews: 15000,
-        image: "https://images.unsplash.com/photo-1618366712277-7216447d7293?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/08/25/4c/08254ce0f681476675c70cedff46c6bf.jpg",
         description: "Industry-leading noise cancellation and breathtaking sound quality.",
         badge: "Bestseller"
     },
@@ -360,7 +360,7 @@ const products = [
         price: 1999,
         rating: 4.2,
         reviews: 6500,
-        image: "https://images.unsplash.com/photo-1624373680215-c1e3c3ebbbbf?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/736x/56/55/f7/5655f7e70571c9b1573082e43b874788.jpg",
         description: "Versatile chinos for a sharp ensemble at work or on the weekend.",
         badge: "Formal Ready"
     },
@@ -398,7 +398,7 @@ const products = [
         price: 2995,
         rating: 4.6,
         reviews: 8900,
-        image: "https://images.unsplash.com/photo-1506629082928-44a7dd250fa4?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/57/57/a6/5757a6fcd014352fba58c278a22a0372.jpg",
         description: "Supportive and breathable design, ideal for gym or everyday comfort.",
         badge: "Top Rated"
     },
@@ -410,7 +410,7 @@ const products = [
         price: 22500,
         rating: 4.7,
         reviews: 1200,
-        image: "https://images.unsplash.com/photo-1584917033904-493bb3c3715c?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/d2/9f/92/d29f92adbdb29faea4ead07d4e22212b.jpg",
         description: "Structured and sophisticated, the ultimate accessory for the modern woman.",
         badge: "Luxury"
     },
@@ -422,7 +422,7 @@ const products = [
         price: 6999,
         rating: 4.4,
         reviews: 650,
-        image: "https://images.unsplash.com/photo-1548624149-f7b316ca9919?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/47/ff/02/47ff024f35f101ae9319c905dc475c8f.jpg",
         description: "Sharp tailoring and premium fabric for a boardroom-ready look.",
         badge: "Office Wear"
     },
@@ -434,7 +434,7 @@ const products = [
         price: 8999,
         rating: 4.8,
         reviews: 9500,
-        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/ba/0a/59/ba0a59d304d0455f0a6a2e173048ff87.jpg",
         description: "Clean, classic, and versatile white sneakers that never go out of style.",
         badge: "Street Choice"
     },
@@ -508,7 +508,7 @@ const products = [
         price: 649,
         rating: 4.0,
         reviews: 150000,
-        image: "https://images.unsplash.com/photo-1594212699903-ec8a3eea50f6?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/736x/cd/20/56/cd2056b02532458df516c932957ab54d.jpg",
         description: "Fast boiling and sleek design, perfect for tea, coffee, and more.",
         badge: "Super Value"
     },
@@ -544,7 +544,7 @@ const products = [
         price: 8999,
         rating: 4.5,
         reviews: 12500,
-        image: "https://images.unsplash.com/photo-1584917033904-493bb3c3715c?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/1200x/f4/6c/c0/f46cc00158bcd950a6a03215e2ba46d2.jpg",
         description: "Healthy frying with up to 90% less fat and Rapid Air technology.",
         badge: "Healthy Choice"
     },
@@ -568,7 +568,7 @@ const products = [
         price: 999,
         rating: 4.3,
         reviews: 123000,
-        image: "https://images.unsplash.com/photo-1610492317734-307520790400?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/736x/7a/87/04/7a87048ae621d687d290db8baf7abca7.jpg",
         description: "Uniquely designed stainless steel vacuum flask for temperature retention.",
         badge: "Durability"
     },
@@ -580,7 +580,7 @@ const products = [
         price: 5499,
         rating: 4.2,
         reviews: 3200,
-        image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?w=400&h=400&fit=crop",
+        image: "https://i.pinimg.com/736x/d3/88/26/d3882698389bc951dfb3830cdbdce636.jpg",
         description: "Naturally cooling and supportive coir mattress for a restful sleep.",
         badge: "Natural"
     },
@@ -665,7 +665,7 @@ const products = [
         price: 28,
         rating: 4.7,
         reviews: 89000,
-        image: "https://images.unsplash.com/photo-1518110903427-020521ca9929?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/1200x/97/05/3c/97053c259b6db345056e590d553bb9ee.jpg",
         description: "The purest vacuum-evaporated iodized salt. Desh ka Namak.",
         badge: ""
     },
@@ -713,7 +713,7 @@ const products = [
         price: 780,
         rating: 4.5,
         reviews: 8400,
-        image: "https://images.unsplash.com/photo-1620706122323-272ec2260662?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/736x/ba/ff/8e/baff8e929372ed39482165d30ef0a3fa.jpg",
         description: "Blend of rice bran and sunflower oil for a healthy heart.",
         badge: "Best Value"
     },
@@ -725,7 +725,7 @@ const products = [
         price: 120,
         rating: 4.7,
         reviews: 2100,
-        image: "https://images.unsplash.com/photo-1626509653295-886ec187a55d?auto=format&fit=crop&q=80&w=400&h=400",
+        image: "https://i.pinimg.com/1200x/71/e5/5b/71e55bb3817ab638263101015efc8207.jpg",
         description: "Unrefined mineral salt for extra flavor and health benefits.",
         badge: "Premium"
     }
